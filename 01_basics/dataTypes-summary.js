@@ -43,3 +43,31 @@ console.log(typeof anotherId);    // the typeof operator print dataType of null 
 //the typeof operator print dataType of fuction = function / function object 
 
 // https://262.ecma-international.org/5.1/#sec-11.4.3
+
+
+//******************************************************************************* */
+
+// stack memory used in (Primitive dataType)
+//heap (non primitive)
+
+
+//call by value ex
+let a = "hello"
+let b = a
+
+b = "hyy"
+
+console.log(a)     //both value is diff
+console.log(b)
+
+
+
+let user1 ={
+    email: "user@sucesss.com",
+    upi: "user@ybl"
+}
+
+let user2 = user1
+
+console.log(user1.email)           //both are same
+console.log(user2.email)

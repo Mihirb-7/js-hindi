@@ -63,3 +63,29 @@ console.log(Object.values(tinderUser));    // storing all keys in tinderUser obj
 
 //finnd sommething in obj
 console.log(tinderUser.hasOwnProperty('isLoggedIn'));
+
+//destructing  -- making name small like courseInstructor to instructor in below eg
+const course = {
+    coursename : "js in hindi",
+    price: "999",
+    CourseInstructor: "Hardworking flow"
+}
+
+//ascessing courseInstructor in diff way
+
+const{CourseInstructor : instructor} = course
+console.log(instructor);
+
+
+// concept of APIS
+// earlier the apis value comes in xml format but nowadays value comes in json
+
+// json is silaar to objects but having no  name and its key - value both sre string
+
+//sometimes we will also get apis in array format
+
+// fetch method to call apis aand fetch data
+
+
+
+

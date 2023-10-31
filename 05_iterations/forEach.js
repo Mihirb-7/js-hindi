@@ -6,7 +6,7 @@ coding.forEach(function(item){
     // console.log(item);
 })                //inside forEach callbaack fn is written (callback fn have no name)
 
-
+//Any function that is passed as an argument to another function so that it can be executed in that other function is called as a callback function.
 
 //another method -- arrow fn
 coding.forEach((item) => {

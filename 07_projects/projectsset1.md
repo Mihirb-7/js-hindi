@@ -60,3 +60,19 @@ form.addEventListener('submit' , function(e){
   }
 })
 ```
+
+## project 3 solution code
+
+```javascript
+
+const clock = document.getElementById('clock')
+
+
+setInterval(function(){                  //fn in js to set a specific interval update
+  let date = new Date()
+  // console.log(date.toLocaleTimeString())
+  clock.innerHTML = date.toLocaleTimeString();
+},1000)
+
+
+```

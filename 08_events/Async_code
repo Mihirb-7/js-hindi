@@ -1,0 +1,11 @@
+
+Js -- synchronous work (one after one code is executed)
+      single threaded lang (runs on single thread)  , sometimes slow as compare to latest lang
+
+-->Execution context (execute one line of code t a time)
+      -- each operation waits for the last one to complete before executing
+
+JS has
+--> Blocking code(block the flow of program)  -- eg , real file sync vs Non blocking code(does not block execution) -- eg ,read file async
+   --reading file or accessing file data is a eg 
+

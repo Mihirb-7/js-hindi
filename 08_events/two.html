@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>JS on youtube</h1>
+    <button is ="stop">Stop</button>
+</body>
+<script>
+    // setTimeout(function(){                    //executed only one time
+    //     console.log("Hitesh");
+    // },2000)                         //it take -- handle- a callback  and timeout  , here fn is handler
+                                     //method , calls api also
+
+//another way using reference
+const sayHitesh = function(){
+    console.log("Hitesh");
+}
+
+const changeText = function(){
+    document.querySelector('h1').innerHTML = "best JS series"
+
+}
+
+const changeMe = setTimeout(changeText,3000);
+
+setTimeout(sayHitesh , 2000)    //reference
+document.querySelector('#stop').addEventListener('click' , function(){
+    clearTimeout(changeMe)
+    console.log("STOPPED");
+})            //to remove timeout
+</script>
+</html>

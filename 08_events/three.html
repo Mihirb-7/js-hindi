@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>JS on youtube Hitesh</h1>
+    <button is ="start">Start</button>
+    <button is ="stop">Stop</button>
+    
+</body>
+<script>
+   let sayDate =  setInterval(function(str){            //do work in a giv time interval 
+        console.log(str,Date.now());
+    })
+
+   const intervalId = setInterval(sayDate,1000,"hi")
+    clearInterval(intervalId)
+</script>
+</html>

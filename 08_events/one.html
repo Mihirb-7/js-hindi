@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Html Events</title>
+</head>
+<body style= "background-color: #414141; color: aliceblue;">
+    <h2>Amazing image</h2>
+    <div >
+        <ul id="images">
+            <li><img width="200px" id="photoshop" src="https://images.pexels.com/photos/3561339/pexels-photo-3561339.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load" alt="photoshop"></li>
+            <li><img width="200px" id="japan" src="https://images.pexels.com/photos/3532553/pexels-photo-3532553.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load" alt=""></li>
+            <li><img width="200px" id="river" src="https://images.pexels.com/photos/3532551/pexels-photo-3532551.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load" alt=""></li>
+            <li><img width="200px" id="owl" src="https://images.pexels.com/photos/3532552/pexels-photo-3532552.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load" alt="" ></li>      
+            <li><img width="200px" id="prayer" src="https://images.pexels.com/photos/2522671/pexels-photo-2522671.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load" alt=""></li>
+            <li><a style="color: aliceblue;" href="https://google.com" id="google">Google</a></li>
+        </ul>
+   </div>
+</body>
+<script>                               //majority of events in js runs sequentially
+//inn browser events is run after doing any activtiy
+                                     //here we learn about the activitis of browser to execute events
+//    document.getElementById('owl'.onclick = function () {       //it is also not good approach 
+//     alert('owl clicked')
+//    })                                  
+
+/*
+
+//recommended
+document.getElementById('owl').addEventListener('click' , function(){
+ alert(('owl clicked'))
+},false)          //false is third parameter , which is by default , we can write or we cannot write
+
+//attachEnent is also one approach for above alert
+//another approach is Jquery -- onEventLister
+
+
+//event object
+document.getElementById('owl').addEventListener('click' , function(e){
+    console.log(e);
+},false)
+
+//basic events -- type(keyboard , mouse type events) , timestamp (time , date ,etc) , deaultPrevented(submit from default prevented)
+// target , toElement , srcElement -- widely used and latest , currnttarget
+// interview - clientX , clientY , screenX , screenY
+
+//altkey , ctnlkey , shiftkey , keycode
+
+
+//event propogation
+
+document.getElementById('owl').addEventListener('click' , function(e){
+    console.log(e);
+},false)                 //talking about false
+
+//event propogation having 2 context -- event bubbling --insiide to outside propogation (false waala ) more used   ,    event capturing  -- outside to inside , top to bottom
+
+document.getElementById('images').addEventListener('click' , function(e){
+    console.log("clicked innside the ul");
+},false) 
+
+document.getElementById('owl').addEventListener('click' , function(e){
+    console.log("owl clicked");
+ e.stopPropagation()   //to sstop  propagation
+
+},false) 
+
+
+document.getElementById('google').addEventListener('click' ,function(e){
+    e.preventDefault();
+    console.log("google cicked");
+},false)
+
+
+
+
+*/
+
+//remove image after click
+
+document.querySelector('#images').addEventListener('click' ,function(e){
+    // console.log(e.target.parentNode);
+    // let removeIt = e.target.parentNode
+    // removeIt.remove();  //if we click on list item instead of image then the whole ul is removed bcoz list item parent is ul
+ 
+
+    //to correct this we include checks
+    console.log(e.target.tagName);
+    if(e.target.tagName === 'IMG'){
+        console.log(e.target.id);
+        let removeIt = e.target.parentNode
+        removeIt.remove()
+    }
+
+    // removeIt.parentNode.removeChild(removeIt)
+},false)
+    
+
+</script>
+</html>

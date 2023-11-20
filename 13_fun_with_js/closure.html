@@ -1,0 +1,69 @@
+<!-- closure  -- a closure gives you access to an outer function's scope from an inner function. In JavaScript, closures 
+    are created every time a function is created, at function creation time. -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Closure</title>
+</head>
+<body style="background-color: #313131;">
+    <button id="orange">Orange</button>
+    <button id="green">Green</button>
+    <script>
+
+        //fn ke andr fn , aur andr waale fn ko outer fn ka access milta , it is known as lexical scoping
+
+//   function init() {
+//   let name = "Mozilla";             // name is a local variable created by init
+//   function displayName() {
+
+//     // displayName() is the inner function, that forms the closure
+//     console.log(name);                 // use variable declared in the parent function
+//   }
+
+//   displayName();
+// }
+// init();
+
+//closure
+
+// function makeFunc() {
+//   const name = "Mozilla";
+//   function displayName() {
+//     console.log(name);
+//   }
+//   return displayName;         //here we only returning inner fn but bcoz of inner fn is using outer fn variable , outer fn is also sent (here not only fn executional context is sent , the whole lexical scope is sent)
+// }
+
+// const myFunc = makeFunc();
+// myFunc();
+
+
+
+    </script>
+    <script>
+        //seeing practical implementation of closure
+        // document.getElementById("orange").onclick = function(){            //changing bgcolor while clicking on orange
+        //     document.body.style.backgroundColor = 'orange'
+        // }
+        // document.getElementById("green").onclick = function(){            //changing bgcolor while clicking on green
+        //     document.body.style.backgroundColor = 'green'
+        // }
+
+        //doing the above thing in fn -- it iss done by closure
+
+        function clickHandler(color){
+            // document.body.style.backgroundColor = '${color}'
+
+           return function(){
+                document.body.style.backgroundColor = '${color}'
+            }
+        }
+
+        document.getElementById('orange').onclick = clickHandler("orange")
+        document.getElementById('green').onclick = clickHandler("green")
+    </script>
+</body>
+</html>
